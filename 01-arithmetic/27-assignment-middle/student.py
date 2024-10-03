@@ -1,3 +1,4 @@
 # write your code here
 def middle(a, b, c):
-    return 0
+    smallest = min(a,b,c)
+    largest = max(a,b,c)
