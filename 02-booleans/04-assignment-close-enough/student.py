@@ -1,1 +1,2 @@
-# write your code here
+def close_enough(x, y):
+    
