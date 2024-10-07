@@ -1,10 +1,8 @@
 # write your code here
 def middle(a, b, c):
-    lowest = min(a,b,c)
-    highest = max(a,b,c)
-
-    a_lowest = a-lowest
-    b_lowest = b-lowest
-    c_lowest = c-lowest
+    sum_n = a+b+c
+    max_n = max(a,b,c)
+    min_n = min(a,b,c)
+    return sum_n - max_n - min_n
 
     
