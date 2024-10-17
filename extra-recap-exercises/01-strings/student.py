@@ -4,8 +4,7 @@ def decode1(word):
 
 # print(decode1('SchAAl'))
 def decode2(word):
-    index_space = word.find(' ')
-    a = word[:index_space:2]
+    a = word[::2]
     return a
 # print(decode2('hqovtzdpozgm'))
 
@@ -18,26 +17,34 @@ def decode3(sentence):
 # print(decode3('sepocseleT are too expensive.'))
 
 def decode4(word):
-    firstletter = word[2]
     a = word[2:(len(word)//2)+2]
     return a
 
 # print(decode4("oddolfijnnjiflK"))
 
 def decode5(sentence):
-    print(sentence)
+    # print('sentence:',sentence)
     first = decode1(sentence)
-    print(first)
-    words = sentence.split(' ')
+    # print('first:',first)
+    words = first.split(' ')
+    # print('words:',words)
+    b = []
     for word in words:
         a = decode2(word)
-        b = ' '.join(a)
-    second = decode2(first)
-    print(b)
-    print(second)
-    third = decode4(second)
-    fourth = decode3(third)
-    return fourth
+        b.append(a)
+    # c = ' '.join(b)
+    e = []
+    for word in b:
+        d = decode4(word)
+        e.append(d)
+    # print('e:',e)
+    f = ' '.join(e)
+    result = decode3(f)
+    return result
 
-decode5("MDEneEdU oAXnkgaCteJE vMtokdrHarpltSKuspcc aaaudAev xzsRkVrSoDlolMernyFZpRHQDdkX QggivNajnoQU youKdSeq lnegtwrvatpeXeUu")
-# print(decode5("MDEneEdU oAXnkgaCteJE vMtokdrHarpltSKuspcc aaaudAev xzsRkVrSoDlolMernyFZpRHQDdkX QggivNajnoQU youKdSeq lnegtwrvatpeXeUu"))
+    # third = decode4(second)
+    # fourth = decode3(third)
+    # return fourth
+
+# decode5("MDEneEdU oAXnkgaCteJE vMtokdrHarpltSKuspcc aaaudAev xzsRkVrSoDlolMernyFZpRHQDdkX QggivNajnoQU youKdSeq lnegtwrvatpeXeUu")
+# print(decode5("rAxNejhfTrns maGwcaifrIcRuEmzsHtxaUnVcSeWsllKnmsYiMiFwQpMZyRhabPu aHhPhyajvfeViSYg xrfAcphhadnqgIeodAAXyDjTcFGT"))
