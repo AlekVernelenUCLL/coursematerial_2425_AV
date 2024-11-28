@@ -1,13 +1,20 @@
 class Counter:
-    def __init__(self, count):
-        self.__count = count
+    def __init__(self):
+        self.__count = 0
 
     @property
     def count(self):
         return self.__count
 
     def increment(self):
-        self.count += 1
+        self.__count += 1
 
     def reset(self):
-        self.__count
+        self.__count = 0
+
+
+counter = Counter()
+counter.increment()
+counter.increment()
+counter.reset()
+print(counter.count)
