@@ -35,7 +35,7 @@ class Tweet:
         return string[:self.max_length]
     
 
-# tweet = Tweet("1234567", 5)
-# tweet.max_length = 0
-# a = tweet.message
-# print(a)
+tweet = Tweet("1234567", 5)
+tweet.max_length = 0
+a = tweet.message
+print(a)
