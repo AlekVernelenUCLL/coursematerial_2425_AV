@@ -8,7 +8,8 @@ class GamePlayer:
         if self == master:
             return self.__word
         else:
-            print("you cannot acces word")
+            # return self.secret_word()
+            print("secret word")
     @word.setter
     def word(self, word):
         self.__word = word
@@ -20,10 +21,14 @@ class GamePlayer:
     def lives(self, lives):
         self.__lives = lives
     
-    # def guess(self, letter):
-    #     if letter in self.word:
+    def guess(self, letter):
+        if letter not in self.word:
+            self.lives -= 1
+        else:
+            pass
+
 
 
 master = GamePlayer("slang", 10)
-player = GamePlayer("slang", 10)
-# print(master.word)
+player = GamePlayer(master.word, master.lives)
+print(player.word)
